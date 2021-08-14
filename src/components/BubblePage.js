@@ -29,7 +29,7 @@ const BubblePage = (props) => {
             return color
           }
         }))
-        //props.history.push(`/colors/${editColor.id}`)
+        setEditing(false);
       })
       .catch(err => {
         console.log("cannot update colors at this time", err);
@@ -37,6 +37,14 @@ const BubblePage = (props) => {
   };
 
   const deleteColor = (colorToDelete) => {
+    axiosWithAuth()
+      .delete(`/colors/${colorToDelete.id}`, colorToDelete)
+      .then(res => {
+        setColors(colors.filter(color => color.id !== res.config.id))
+      })
+      .catch(err => {
+        console.log("Cannot delete color at this time", err);
+      })
   };
 
   return (
