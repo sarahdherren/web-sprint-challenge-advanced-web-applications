@@ -12,7 +12,7 @@ const Login = (props) => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
   const [ credentials, setCredentials ] = useState(initialValues);
-  const [ loginError, setloginError ] = useState(error);
+  const [ loginError, setLoginError ] = useState(error);
 
   const handleChange = (e) => {
     const inputName = e.target.name
@@ -28,11 +28,11 @@ const Login = (props) => {
       .post("http://localhost:5000/api/login", credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload)
-        props.history.push("/protected")
+        props.history.push("/colors")
       })
       .catch(err => {
         console.log("login failed to authorize:", err)
-        setloginError("Username or password invalid. Please verify credentials and try again!")
+        setLoginError("Username or password invalid. Please verify credentials and try again!")
       })
   }
 
@@ -59,7 +59,7 @@ const Login = (props) => {
             value={credentials.password}
             onChange={handleChange}
           />
-          <button>login</button>
+          <button id="submit" type="submit">login</button>
         </form>
       </div>
 

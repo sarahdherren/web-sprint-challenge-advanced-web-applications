@@ -21,7 +21,6 @@ const BubblePage = (props) => {
     axiosWithAuth()
       .put(`/colors/${editColor.id}`, editColor)
       .then(res => {
-        console.log(res.data);
         setColors(colors.map(color => {
           if(color.id === res.data.id){
             return res.data
