@@ -6,7 +6,7 @@ import { userEvent } from '@testing-library/user-event';
 import ColorList from './ColorList';
 import { resetRetrieveHandlers } from 'source-map-support';
 
-const testColors = [
+export const testColors = [
     {
       color: "aliceblue",
       code: {

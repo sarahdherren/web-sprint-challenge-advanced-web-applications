@@ -1,15 +1,10 @@
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
-const fetchColorService = (setColors) => {
-    console.log('fetching');
-    axiosWithAuth()
+const fetchColorService = () => {
+    return axiosWithAuth()
         .get("/colors")
-        .then(res => {
-            setColors(res.data);
-        })
-        .catch(err => {
-            console.log("unable to fetch color palette at this time. Please try again later", err);
-        })
+        .then(res => res)
+        .catch(err => err)
 }
 
 export default fetchColorService;

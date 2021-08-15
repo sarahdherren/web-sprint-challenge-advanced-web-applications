@@ -10,7 +10,13 @@ const BubblePage = (props) => {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    fetchColorService(setColors)
+    fetchColorService()
+    .then(res => {
+      setColors(res.data);
+    })
+    .catch(err => {
+      console.log("unable to fetch color palette at this time. Please try again later", err);
+  })
   }, [])
 
   const toggleEdit = (value) => {
