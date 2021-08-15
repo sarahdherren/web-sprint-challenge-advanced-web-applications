@@ -32,7 +32,7 @@ const Login = (props) => {
       })
       .catch(err => {
         console.log("login failed to authorize:", err)
-        err && setLoginError("Username or password invalid. Please verify credentials and try again!")
+        setLoginError("Username or password invalid. Please verify credentials and try again!")
       })
   }
 
