@@ -28,7 +28,7 @@ const Login = (props) => {
       .post("http://localhost:5000/api/login", credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload)
-        props.history.push("/colors")
+        props.history.push("/bubbles")
       })
       .catch(err => {
         console.log("login failed to authorize:", err)

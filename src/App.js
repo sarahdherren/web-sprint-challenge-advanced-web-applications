@@ -30,7 +30,7 @@ function App() {
           <a data-testid="logoutButton" onClick={handleSubmit} href="#">logout</a>
         </header>
       <Switch>
-        <PrivateRoute exact path="/colors" component={BubblePage} />
+        <PrivateRoute exact path="/bubbles" component={BubblePage} />
         <Route path='/login' component={Login} />
         <Route path='/' component={Login} />
       </Switch>
