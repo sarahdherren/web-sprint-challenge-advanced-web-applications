@@ -41,7 +41,7 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1>Welcome to the Bubble App!</h1>
+      <h1>Welcome to the Bubbles App!</h1>
       <div data-testid="loginForm" className="login-form">
         <h2>Please login</h2>
         <form onSubmit={handleSubmit}>
